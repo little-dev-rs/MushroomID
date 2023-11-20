@@ -19,6 +19,11 @@
 		771566DA2B0B6F3C00765DDA /* CustomSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771566D92B0B6F3C00765DDA /* CustomSearchView.swift */; };
 		771566DE2B0B730800765DDA /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771566DD2B0B730800765DDA /* CollectionView.swift */; };
 		771566E02B0B734E00765DDA /* ArticlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771566DF2B0B734E00765DDA /* ArticlesView.swift */; };
+		771566E42B0B7A9300765DDA /* ArticleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771566E32B0B7A9300765DDA /* ArticleCardView.swift */; };
+		771566E62B0B94DC00765DDA /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771566E52B0B94DC00765DDA /* Article.swift */; };
+		771566E82B0B952C00765DDA /* ArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771566E72B0B952C00765DDA /* ArticlesViewModel.swift */; };
+		77B1583C2B0BAD7E002ECE0F /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B1583B2B0BAD7E002ECE0F /* CollectionViewModel.swift */; };
+		77B1583E2B0BE562002ECE0F /* Mushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B1583D2B0BE562002ECE0F /* Mushroom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		771566D92B0B6F3C00765DDA /* CustomSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchView.swift; sourceTree = "<group>"; };
 		771566DD2B0B730800765DDA /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		771566DF2B0B734E00765DDA /* ArticlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesView.swift; sourceTree = "<group>"; };
+		771566E32B0B7A9300765DDA /* ArticleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCardView.swift; sourceTree = "<group>"; };
+		771566E52B0B94DC00765DDA /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		771566E72B0B952C00765DDA /* ArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewModel.swift; sourceTree = "<group>"; };
+		77B1583B2B0BAD7E002ECE0F /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
+		77B1583D2B0BE562002ECE0F /* Mushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mushroom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +165,10 @@
 		771566E12B0B774000765DDA /* Articles */ = {
 			isa = PBXGroup;
 			children = (
+				771566E52B0B94DC00765DDA /* Article.swift */,
+				771566E72B0B952C00765DDA /* ArticlesViewModel.swift */,
 				771566DF2B0B734E00765DDA /* ArticlesView.swift */,
+				771566E32B0B7A9300765DDA /* ArticleCardView.swift */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -164,6 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				771566DD2B0B730800765DDA /* CollectionView.swift */,
+				77B1583B2B0BAD7E002ECE0F /* CollectionViewModel.swift */,
+				77B1583D2B0BE562002ECE0F /* Mushroom.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -299,12 +314,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				771566DE2B0B730800765DDA /* CollectionView.swift in Sources */,
+				771566E82B0B952C00765DDA /* ArticlesViewModel.swift in Sources */,
+				771566E42B0B7A9300765DDA /* ArticleCardView.swift in Sources */,
+				771566E62B0B94DC00765DDA /* Article.swift in Sources */,
 				771566D82B0B6F1100765DDA /* TabBarIcon.swift in Sources */,
 				771566E02B0B734E00765DDA /* ArticlesView.swift in Sources */,
 				771566DA2B0B6F3C00765DDA /* CustomSearchView.swift in Sources */,
+				77B1583C2B0BAD7E002ECE0F /* CollectionViewModel.swift in Sources */,
 				771566D62B0B61E900765DDA /* ViewRouter.swift in Sources */,
 				771566AD2B0B4BFD00765DDA /* ContentView.swift in Sources */,
 				771566AB2B0B4BFD00765DDA /* MushroomIDApp.swift in Sources */,
+				77B1583E2B0BE562002ECE0F /* Mushroom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +495,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -517,7 +537,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
