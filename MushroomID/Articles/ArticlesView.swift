@@ -8,13 +8,29 @@
 import SwiftUI
 
 struct ArticlesView: View {
+    
+    let viewModel: ArticlesViewModel = ArticlesViewModel()
+    
     var body: some View {
-        Text("Articles")
+        
+        NavigationStack {
+            ScrollView {
+                ForEach(viewModel.articles) { article in
+                    ArticleCardView(article: article)
+                        .padding()
+                }
+            }
+            .navigationTitle(viewModel.navigationTitle)
+        }
+
     }
+    
 }
 
 struct ArticlesView_Previews: PreviewProvider {
+    
     static var previews: some View {
         ArticlesView()
     }
+
 }
