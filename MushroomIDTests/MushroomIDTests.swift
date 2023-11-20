@@ -2,7 +2,7 @@
 //  MushroomIDTests.swift
 //  MushroomIDTests
 //
-//  Created by Svetlana Shardakova on 20/11/23.
+//  Created by MushroomTeam on 20/11/23.
 //
 
 import XCTest
