@@ -7,6 +7,12 @@
 
 import Foundation
 
+struct MyMushroom: Identifiable {
+    let mushroom: Mushroom
+    let dateFound: Date
+    let id = UUID()
+}
+
 enum EdibilityLevel: String {
     case edible = "Съедобный"
     case inedible = "Несъедобный"
@@ -27,7 +33,7 @@ enum Season: String {
     case winter = "Зима"
 }
 
-struct Mushroom {
+struct Mushroom: Identifiable {
     var id = UUID()
     var name: String
     var description: String
@@ -39,6 +45,7 @@ struct Mushroom {
     var growingConditions: [String]
     var similarSpecies: [String]
     var symbolism: String
+//    var dateFound: Date?
     
     init(name: String,
          description: String,
@@ -49,7 +56,9 @@ struct Mushroom {
          season: Season,
          growingConditions: [String],
          similarSpecies: [String],
-         symbolism: String) {
+         symbolism: String
+//         dateFound: Date? = nil
+    ) {
         self.name = name
         self.description = description
         self.edibility = edibility
@@ -60,6 +69,7 @@ struct Mushroom {
         self.growingConditions = growingConditions
         self.similarSpecies = similarSpecies
         self.symbolism = symbolism
+//        self.dateFound = dateFound
     }
 }
 

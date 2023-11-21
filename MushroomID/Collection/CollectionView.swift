@@ -26,14 +26,25 @@ struct CollectionView: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                ScrollView {
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                        ForEach(viewModel.getData(for: selectedSegment), id: \.self) { item in
-                            MushroomView(mushroomModel: item)
-                        }
+                .padding(.horizontal)
+                ScrollView(.vertical) {
+                    if selectedSegment == .mine {
+                        // сделать категории по дням когда был найден гриб
+                        // выводить горизонтальные row
+                        // заменить иконку гриба на таб баре
+                        // сгенерить иконку для приложения
+                        // нарисовать ланч скрин и добавить в приложение
+                        // сделать онбординг на пару скринов
+                        // заменить лупу на камеру
+                        // хранить данные всех грибов в джейсоне и парсить их
+                        // сделать поповер понажатию на камеру
+                        // обучить модельку и впихнуть в приложение
+                        // войс овер
+                        // прeзентация
+                        MushroomDateCollectionView(data: viewModel.myMushrooms)
+                    } else {
+                        MushroomListView(data: viewModel.allMushrooms)
                     }
-                    .padding()
                 }
             }
             .navigationTitle("Mushrooms")
@@ -42,35 +53,6 @@ struct CollectionView: View {
 
     }
 
-}
-
-struct MushroomView: View {
-    
-    var mushroomModel: Mushroom
-
-    var body: some View {
-
-        ZStack(alignment: .bottomLeading) {
-            
-            Image(mushroomModel.imageName )
-                .resizable()
-                .aspectRatio(1.0, contentMode: .fill)
-                .clipped()
-        
-            LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom)
-
-            VStack {
-                
-                Text(mushroomModel.name)
-                    .font(.subheadline) // .title3
-                    .bold()
-            }
-            .foregroundStyle(.white) // 15 OS
-            .padding()
-        }
-        .aspectRatio(1.0, contentMode: .fit)
-        .clipShape(RoundedRectangle(cornerRadius: 20))
-    }
 }
 
 struct CollectionView_Previews: PreviewProvider {

@@ -9,16 +9,68 @@ import Foundation
 
 public class CollectionViewModel: ObservableObject {
 
-    func getData(for segment: CollectionType) -> [Mushroom] { // move to bottom and create protocol
-        return segment == .mine ? myMushrooms : allMushrooms
-    }
-    
     let navigationTitle: String = "Collection"
 
     let myCollectionTitle: String = "My Collection"
     let allMushroomsTitle: String = "All mushrooms"
 
-    let myMushrooms: [Mushroom] = [ ]
+    let myMushrooms: [MyMushroom] = [ .init(mushroom:
+                                                Mushroom(name: "Agaricus bisporus",
+                                                         description: "Common mushroom",
+                                                         edibility: .edible,
+                                                         toxicity: .nonToxic,
+                                                         imageName: "Articles/mushroom1",
+                                                         habitat: "Grasslands",
+                                                         season: .spring,
+                                                         growingConditions: ["Rich soil", "Moderate humidity"],
+                                                         similarSpecies: ["Agaricus campestris", "Agaricus arvensis"],
+                                                         symbolism: "No specific symbolism"),
+                                            dateFound: Date()),
+                                      .init(mushroom: Mushroom(name: "Agaricus bisporus",
+                                                               description: "Common mushroom",
+                                                               edibility: .edible,
+                                                               toxicity: .nonToxic,
+                                                               imageName: "Articles/mushroom1",
+                                                               habitat: "Grasslands",
+                                                               season: .spring,
+                                                               growingConditions: ["Rich soil", "Moderate humidity"],
+                                                               similarSpecies: ["Agaricus campestris", "Agaricus arvensis"],
+                                                               symbolism: "No specific symbolism"),
+                                            dateFound: Date().yesterday),
+                                      .init(mushroom: Mushroom(name: "Agaricus bisporus",
+                                                               description: "Common mushroom",
+                                                               edibility: .edible,
+                                                               toxicity: .nonToxic,
+                                                               imageName: "Articles/mushroom1",
+                                                               habitat: "Grasslands",
+                                                               season: .spring,
+                                                               growingConditions: ["Rich soil", "Moderate humidity"],
+                                                               similarSpecies: ["Agaricus campestris", "Agaricus arvensis"],
+                                                               symbolism: "No specific symbolism"),
+                                            dateFound: Date().yesterday),
+                                      .init(mushroom: Mushroom(name: "Amanita muscaria",
+                                                               description: "Fly agaric",
+                                                               edibility: .inedible,
+                                                               toxicity: .poisonous,
+                                                               imageName: "Articles/mushroom2",
+                                                               habitat: "Coniferous and deciduous forests",
+                                                               season: .autumn,
+                                                               growingConditions: ["Under birch trees", "Humus-rich soil"],
+                                                               similarSpecies: ["Amanita pantherina", "Amanita gemmata"],
+                                                               symbolism: "Symbol of fairy tales"),
+                                            dateFound: Date().twoDaysAgo),
+                                      .init(mushroom: Mushroom(name: "Amanita muscaria",
+                                                               description: "Fly agaric",
+                                                               edibility: .inedible,
+                                                               toxicity: .poisonous,
+                                                               imageName: "Articles/mushroom2",
+                                                               habitat: "Coniferous and deciduous forests",
+                                                               season: .autumn,
+                                                               growingConditions: ["Under birch trees", "Humus-rich soil"],
+                                                               similarSpecies: ["Amanita pantherina", "Amanita gemmata"],
+                                                               symbolism: "Symbol of fairy tales"),
+                                            dateFound: Date().threeDaysAgo)
+    ].sorted { ($0.dateFound) > ($1.dateFound) }
 
     let allMushrooms: [Mushroom] = [
         Mushroom(name: "Agaricus bisporus",
