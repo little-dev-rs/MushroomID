@@ -2,7 +2,7 @@
 //  MushroomDateRowView.swift
 //  MushroomID
 //
-//  Created by Svetlana Shardakova on 21/11/23.
+//  Created by MushroomTeam on 21/11/23.
 //
 
 import SwiftUI
@@ -21,10 +21,10 @@ struct MushroomDateRowView: View {
                 Text(rowName)
                     .font(.headline)
                     .bold()
-                    .foregroundColor(.gray.opacity(0.5))// TODO: create gray color
-                ScrollView(.horizontal) {
+                    .foregroundColor(Color("TextGray"))
+                ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(data) { item in
+                        ForEach(data.sorted(by: { $1.name > $0.name })) { item in
                             MushroomView(mushroomModel: item)
                         }
                     }
