@@ -2,7 +2,7 @@
 //  MushroomView.swift
 //  MushroomID
 //
-//  Created by Svetlana Shardakova on 20/11/23.
+//  Created by MushroomTeam on 20/11/23.
 //
 
 import SwiftUI

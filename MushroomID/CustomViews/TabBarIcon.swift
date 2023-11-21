@@ -13,12 +13,12 @@ struct TabBarIcon: View {
     let assignedPage: Page
     let width: CGFloat
     let height: CGFloat
-    let systemIconName: String
+    let image: Image
     let tabBarName: String
     
     var body: some View {
         VStack {
-            Image(systemName: systemIconName)
+            image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: width, height: height)
@@ -31,6 +31,7 @@ struct TabBarIcon: View {
         .onTapGesture {
             viewRouter.currentPage = assignedPage
         }
-        .foregroundColor(viewRouter.currentPage == assignedPage ? Color("TabBarHighlight") : .gray)
+        .colorMultiply(viewRouter.currentPage == assignedPage ? Color("DarkPurple") : .gray)
+        .foregroundColor(viewRouter.currentPage == assignedPage ? Color("DarkPurple") : .gray)
     }
 }

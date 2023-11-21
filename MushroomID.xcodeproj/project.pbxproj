@@ -29,6 +29,7 @@
 		77B158442B0CB224002ECE0F /* MushroomDateRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B158432B0CB224002ECE0F /* MushroomDateRowView.swift */; };
 		77B158462B0CB247002ECE0F /* MushroomDateCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B158452B0CB247002ECE0F /* MushroomDateCollectionView.swift */; };
 		77B158492B0CCBEB002ECE0F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B158482B0CCBEB002ECE0F /* Date.swift */; };
+		77B1584C2B0CE87A002ECE0F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B1584B2B0CE87A002ECE0F /* CameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		77B158432B0CB224002ECE0F /* MushroomDateRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomDateRowView.swift; sourceTree = "<group>"; };
 		77B158452B0CB247002ECE0F /* MushroomDateCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomDateCollectionView.swift; sourceTree = "<group>"; };
 		77B158482B0CCBEB002ECE0F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		77B1584B2B0CE87A002ECE0F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		77B1584D2B0D01F8002ECE0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,13 +128,15 @@
 		771566A92B0B4BFD00765DDA /* MushroomID */ = {
 			isa = PBXGroup;
 			children = (
-				77B158472B0CCBD9002ECE0F /* Extensions */,
+				77B1584D2B0D01F8002ECE0F /* Info.plist */,
 				771566AA2B0B4BFD00765DDA /* MushroomIDApp.swift */,
 				771566AC2B0B4BFD00765DDA /* ContentView.swift */,
 				771566D52B0B61E900765DDA /* ViewRouter.swift */,
 				771566E12B0B774000765DDA /* Articles */,
+				77B1584A2B0CE868002ECE0F /* Camera */,
 				771566E22B0B774D00765DDA /* Collection */,
 				771566DB2B0B6F6400765DDA /* CustomViews */,
+				77B158472B0CCBD9002ECE0F /* Extensions */,
 				771566AE2B0B4BFF00765DDA /* Assets.xcassets */,
 				771566B02B0B4BFF00765DDA /* MushroomID.entitlements */,
 				771566B12B0B4BFF00765DDA /* Preview Content */,
@@ -204,6 +209,14 @@
 				77B158482B0CCBEB002ECE0F /* Date.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		77B1584A2B0CE868002ECE0F /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				77B1584B2B0CE87A002ECE0F /* CameraView.swift */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +352,7 @@
 				771566DE2B0B730800765DDA /* CollectionView.swift in Sources */,
 				771566E82B0B952C00765DDA /* ArticlesViewModel.swift in Sources */,
 				77B158422B0C0BF4002ECE0F /* MushroomListView.swift in Sources */,
+				77B1584C2B0CE87A002ECE0F /* CameraView.swift in Sources */,
 				771566E42B0B7A9300765DDA /* ArticleCardView.swift in Sources */,
 				77B158462B0CB247002ECE0F /* MushroomDateCollectionView.swift in Sources */,
 				771566E62B0B94DC00765DDA /* Article.swift in Sources */,
@@ -511,6 +525,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MushroomID/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MushroomID;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -553,6 +568,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MushroomID/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MushroomID;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;

@@ -10,12 +10,11 @@ import Foundation
 public class ArticlesViewModel {
     
     let articles: [Article] = [
-        .init(title: "How to cook", backgroundImageName: "Articles/mushroom1"),
-        .init(title: "Where to find ", backgroundImageName: "Articles/mushroom2"),
-        .init(title: "Top 10 mushrooms for soup", backgroundImageName: "Articles/mushroom3"),
-        .init(title: "The most expensive truffle in the world", backgroundImageName: "Articles/mushroom4"),
-        .init(title: "Список самых редких грибов", backgroundImageName: "Articles/mushroom5"),
-        .init(title: "Еще одна статья", backgroundImageName: "Articles/mushroom6"),
+        .init(title: "Top-10 mushrooms to cook a soup", backgroundImageName: "Articles/mushroom2"),
+        .init(title: "Where to find white mushroom", backgroundImageName: "Articles/mushroom7"),
+        .init(title: "History of Amanita muscaria", backgroundImageName: "Articles/mushroom5"),
+        .init(title: "List of rare mushrooms", backgroundImageName: "Articles/mushroom3"),
+        .init(title: "One more mushroom", backgroundImageName: "Articles/mushroom1"),
     ]
     
     let navigationTitle: String = "Articles"

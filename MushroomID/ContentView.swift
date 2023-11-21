@@ -10,17 +10,20 @@ import SwiftUI
 struct ContentView: View {
     
     private enum Constants {
-        static let searchImageName: String = "magnifyingglass.circle.fill"
+        static let searchImageName: String = "camera.circle.fill"
         static let collectionTabName: String = "Collection"
-        static let collectionTabImageName: String = "tree"// "camera.macro" TODO: create custom mushroom image
+        static let collectionTabImageName: String = "mushroom"
         static let articlesTabName: String = "Articles"
-        static let articlesTabImageName: String = "book"// "book.fill"
+        static let articlesTabImageName: String = "articles"
         static let searchButtonColor: Color = Color("DarkPurple")
         static let tabBarBackgroundColor: Color = Color("TabBarBackground")
     }
 
     @StateObject var viewRouter: ViewRouter
     @State var showPopup = false
+    
+    @State private var isShowingCamera = false
+    @State private var capturedImage: UIImage?
 
     var body: some View {
         
@@ -40,9 +43,6 @@ struct ContentView: View {
                 Spacer()
                 
                 ZStack {
-                    if showPopup {
-//                        PlusMenu()
-                    }
                     HStack {
                         Spacer()
                         Spacer()
@@ -50,7 +50,7 @@ struct ContentView: View {
                                    assignedPage: .collection,
                                    width: geometry.size.width / 5,
                                    height: geometry.size.height / 28,
-                                   systemIconName: Constants.collectionTabImageName,
+                                   image: Image(Constants.collectionTabImageName),
                                    tabBarName: Constants.collectionTabName)
                         Spacer()
                         
@@ -60,8 +60,11 @@ struct ContentView: View {
                                          color: Constants.searchButtonColor)
                         .onTapGesture {
                             withAnimation {
-                                showPopup.toggle()
+                                isShowingCamera = true
                             }
+                        }
+                        .sheet(isPresented: $isShowingCamera) {
+                            CameraView(isShowingCamera: $isShowingCamera, capturedImage: $capturedImage)
                         }
                         
                         Spacer()
@@ -69,7 +72,8 @@ struct ContentView: View {
                                    assignedPage: .articles,
                                    width: geometry.size.width / 5,
                                    height: geometry.size.height / 28,
-                                   systemIconName: Constants.articlesTabImageName,
+                                   image: Image(Constants.articlesTabImageName),
+//                                   image: Image(systemName: Constants.articlesTabImageName),
                                    tabBarName: Constants.articlesTabName)
                         Spacer()
                         Spacer()
