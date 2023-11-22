@@ -64,7 +64,7 @@ struct ContentView: View {
                             }
                         }
                         .sheet(isPresented: $isShowingCamera) {
-                            CameraView(isShowingCamera: $isShowingCamera, capturedImage: $capturedImage)
+                            IdentityView(classifier: ImageClassifier())
                         }
                         
                         Spacer()
@@ -73,7 +73,6 @@ struct ContentView: View {
                                    width: geometry.size.width / 5,
                                    height: geometry.size.height / 28,
                                    image: Image(Constants.articlesTabImageName),
-//                                   image: Image(systemName: Constants.articlesTabImageName),
                                    tabBarName: Constants.articlesTabName)
                         Spacer()
                         Spacer()
