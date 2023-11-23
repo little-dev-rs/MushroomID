@@ -25,6 +25,8 @@ struct CollectionView: View {
                         Text(segment.rawValue)
                     }
                 }
+                .accessibility(label: Text("Control"))
+                .accessibility(hint: Text("You can navigate between your collection of mushrooms and collection of all mushrooms "))
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(.horizontal)
                 ScrollView(.vertical) {
@@ -41,7 +43,7 @@ struct CollectionView: View {
                 }
             }
             .navigationTitle("Mushrooms")
-            
+
         }
 
     }

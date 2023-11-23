@@ -12,6 +12,7 @@ struct IdentityView: View {
     @State var isPresenting: Bool = false
     @State var uiImage: UIImage?
     @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
+    @State private var isBottomSheetPresented = false
     
     @ObservedObject var classifier: ImageClassifier
     
@@ -22,23 +23,30 @@ struct IdentityView: View {
             HStack {
                 
                 Image(systemName: "photo")
+                    .accessibility(label: Text("photo libraty button"))
+                    .accessibility(hint: Text("tap to choose a photo from library"))
+                    .padding(.horizontal, 10)
                     .onTapGesture {
                         isPresenting = true
                         sourceType = .photoLibrary
                     }
-                
+                  
                 Image(systemName: "camera")
+                    .accessibility(label: Text("camera button"))
+                    .accessibility(hint: Text("tap to make a photo"))
+                    .padding(.horizontal, 10)
                     .onTapGesture {
                         isPresenting = true
                         sourceType = .camera
                     }
+                
             }
             .padding()
             .font(.title)
             .foregroundColor(Color("DarkPurple"))
             
-            RoundedRectangle(cornerRadius: 4)
-                .foregroundColor(.white)
+            RoundedRectangle(cornerRadius: 10)
+                .foregroundColor(Color("LightGray"))
                 .overlay(
                     Group {
                         if uiImage != nil {
@@ -46,7 +54,11 @@ struct IdentityView: View {
                                 .resizable()
                                 .scaledToFit()
                         } else {
-                            Text("Please take a photo of choose an existing one")
+                            Text("Please take a photo \nor choose an existing one to identify")
+                                .multilineTextAlignment(.center)
+                                .font(.headline)
+                                .bold()
+                                .foregroundColor(Color("TextGray"))
                         }
                     }
                 )
@@ -77,7 +89,6 @@ struct IdentityView: View {
     }
     
 }
-
 
 struct IdentityView_Previews: PreviewProvider {
     static var previews: some View {
