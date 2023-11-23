@@ -52,12 +52,16 @@ struct ContentView: View {
                                    height: geometry.size.height / 28,
                                    image: Image(Constants.collectionTabImageName),
                                    tabBarName: Constants.collectionTabName)
+                        .accessibility(label: Text("Collection tab"))
+                        .accessibility(hint: Text("tap to see collections of mushrooms"))
                         Spacer()
                         
                         CustomSearchView(width: geometry.size.width,
                                          height: geometry.size.height,
                                          iconName: Constants.searchImageName,
                                          color: Constants.searchButtonColor)
+                        .accessibility(label: Text("Identify mushroom button"))
+                        .accessibility(hint: Text("tap to identify mushroom by photo"))
                         .onTapGesture {
                             withAnimation {
                                 isShowingCamera = true
@@ -74,6 +78,8 @@ struct ContentView: View {
                                    height: geometry.size.height / 28,
                                    image: Image(Constants.articlesTabImageName),
                                    tabBarName: Constants.articlesTabName)
+                        .accessibility(label: Text("Articles tab"))
+                        .accessibility(hint: Text("tap to see a list of articles about mushrooms"))
                         Spacer()
                         Spacer()
                     }

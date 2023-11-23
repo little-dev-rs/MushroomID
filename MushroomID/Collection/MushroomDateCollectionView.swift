@@ -18,11 +18,11 @@ struct MushroomDateCollectionView: View {
         VStack {
             // Row for Today
             let todaysData = data.filter({ $0.dateFound.isSameDay(as: Date())})
-            MushroomDateRowView(rowName: "Today".uppercased(), data: todaysData.map({ $0.mushroom }))
+            MushroomRowView(rowName: "Today".uppercased(), data: todaysData.map({ $0.mushroom }))
             
             // Row for Yesterday
             let yesterdaysData = data.filter({ $0.dateFound.isSameDay(as: Date().yesterday)})
-            MushroomDateRowView(rowName: "Yesterday".uppercased(), data: yesterdaysData.map({ $0.mushroom }))
+            MushroomRowView(rowName: "Yesterday".uppercased(), data: yesterdaysData.map({ $0.mushroom }))
             
             // Separate rows for other dates
             let filteredData = data.filter { dateItem in
@@ -37,7 +37,7 @@ struct MushroomDateCollectionView: View {
             ForEach(groupedData.keys.sorted(by: { $1 < $0 }), id: \.self) { oldDate in
                 let mushroomsForSpecificDate = groupedData[oldDate] ?? []
                 let arr = mushroomsForSpecificDate.map({ $0.mushroom })
-                MushroomDateRowView(rowName: oldDate.formattedDescription(), data: arr)
+                MushroomRowView(rowName: oldDate.formattedDescription(), data: arr)
             }
 
         }

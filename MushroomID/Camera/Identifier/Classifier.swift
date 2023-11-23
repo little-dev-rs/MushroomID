@@ -15,8 +15,7 @@ struct Classifier {
     
     mutating func detect(ciImage: CIImage) {
         
-        guard let model = try? VNCoreMLModel(for: SqueezeNet(configuration: MLModelConfiguration()).model)
-        else {
+        guard let model = try? VNCoreMLModel(for: MushroomId1(configuration: MLModelConfiguration()).model) else {
             return
         }
         
@@ -34,6 +33,7 @@ struct Classifier {
             self.results = firstResult.identifier
         }
         
+        print("results \(results)")
     }
     
 }

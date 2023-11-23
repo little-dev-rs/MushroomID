@@ -33,6 +33,8 @@ struct ArticleCardView: View {
             .foregroundStyle(.white) // 15 OS
             .padding()
         }
+        .accessibility(label: Text("card of article \(article.title)"))
+        .accessibility(hint: Text("tap to learn read \(article.title)"))
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .frame(height: 200)
     }

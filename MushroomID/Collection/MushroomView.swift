@@ -23,7 +23,6 @@ struct MushroomView: View {
             LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom)
 
             VStack {
-                
                 Text(mushroomModel.name)
                     .font(.subheadline) // .title3
                     .bold()
@@ -31,6 +30,8 @@ struct MushroomView: View {
             .foregroundStyle(.white) // 15 OS
             .padding()
         }
+        .accessibility(label: Text("card of \(mushroomModel.name)"))
+        .accessibility(hint: Text("tap to learn more details about \(mushroomModel.name)"))
         .aspectRatio(1.0, contentMode: .fit)
         .clipShape(RoundedRectangle(cornerRadius: 20))
     }
